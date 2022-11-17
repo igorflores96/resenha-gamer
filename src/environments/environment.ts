@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiKey: 'e5f5406524msh6823812e61565fdp143b77jsn884c82ed34e3',
+  baseUrl: 'http://free-to-play-games-database.p.rapidapi.com',  
 };
 
 /*
