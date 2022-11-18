@@ -6,8 +6,11 @@
   </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list>
+  <ion-list [inset]="true">
     <ion-item button *ngFor="let jogo of jogos">
+      <ion-thumbnail slot="start">
+        <img src={{jogo.thumbnail}}>
+      </ion-thumbnail>
       <ion-label> {{ jogo.title }} </ion-label>
     </ion-item>
   </ion-list>

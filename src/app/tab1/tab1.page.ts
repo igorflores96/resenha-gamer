@@ -9,10 +9,10 @@ import { ApiService, ResultadoApi } from '../service/api.service';
 })
 export class Tab1Page implements OnInit {
 
-  jogos: ResultadoApi[];
+  jogos: any;
 
   constructor(private apiService: ApiService, private loadingCtrl: LoadingController) {
-    this.jogos = []
+    this.jogos;
   }
 
   ngOnInit() {
@@ -28,7 +28,7 @@ export class Tab1Page implements OnInit {
 
     this.apiService.getGamesList().subscribe((res) => {
       loading.dismiss();
-      this.jogos = [...this.jogos, res];
+      this.jogos = res;
       console.log(this.jogos);
       console.log(res);
     });
