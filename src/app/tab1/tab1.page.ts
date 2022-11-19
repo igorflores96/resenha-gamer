@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
+import { Logs } from 'selenium-webdriver';
 import { ApiService, ResultadoApi } from '../service/api.service';
 
 @Component({
@@ -20,6 +21,7 @@ export class Tab1Page implements OnInit {
   }
 
   async loadGames() {
+    console.log("Iniciando await");
     const loading = await this.loadingCtrl.create({
       message: 'Carregando..',
       spinner: 'bubbles',
@@ -27,6 +29,7 @@ export class Tab1Page implements OnInit {
     await loading.present();
 
     this.apiService.getGamesList().subscribe((res) => {
+      console.log("chegou no dismiss");
       loading.dismiss();
       this.jogos = res;
       console.log(this.jogos);
