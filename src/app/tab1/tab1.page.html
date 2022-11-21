@@ -1,7 +1,11 @@
 <ion-header [translucent]="true">
   <ion-header>
     <ion-toolbar>
-      <ion-searchbar color="light" placeholder="Procure um jogo"></ion-searchbar>
+      <ion-searchbar color="light" 
+      placeholder="Procure um jogo" 
+      [(ngModel)]="texto_consulta" 
+      (ionInput)="filtrarJogos($event)"
+      clearInput></ion-searchbar>
     </ion-toolbar>
   </ion-header>
 
@@ -11,7 +15,7 @@
       <ion-thumbnail slot="start">
         <img src={{jogo.thumbnail}}>
       </ion-thumbnail>
-      <ion-label> {{ jogo.title }} </ion-label>
+      <h5> {{ jogo.title }} </h5>
     </ion-item>
   </ion-list>
 </ion-content>

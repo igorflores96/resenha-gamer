@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "291182041739",
+    "project_id": "resenha-gamer",
+    "storage_bucket": "resenha-gamer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:291182041739:android:00397573ed7b75e9d0928e",
+        "android_client_info": {
+          "package_name": "resenha_gamer.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "291182041739-0a94vc3156sv9vf07fcm64jpir78jb23.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvKLHIxmCPRSAoDE7vIOrU4zUOFUmJ3Ik"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "291182041739-0a94vc3156sv9vf07fcm64jpir78jb23.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
