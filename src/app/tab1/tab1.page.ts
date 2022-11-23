@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LoadingController } from '@ionic/angular';
+import { LoadingController, NavController } from '@ionic/angular';
 import { Logs } from 'selenium-webdriver';
-import { ApiService, ResultadoApi } from '../service/api.service';
+import { ApiService, ResultadoApi } from '../services/api.service';
 
 import _ from 'lodash';
 
@@ -13,12 +13,13 @@ import _ from 'lodash';
 })
 export class Tab1Page implements OnInit {
 
-  jogos: any;
-  filtro_jogos: any;
+  jogos: ResultadoApi[];
+  filtro_jogos: ResultadoApi[];
   texto_consulta: string;
 
-  constructor(private apiService: ApiService, private loadingCtrl: LoadingController) {
+  constructor(private apiService: ApiService, private loadingCtrl: LoadingController, private controle_pagina: NavController) {
     this.texto_consulta = '';
+    
   }
 
   ngOnInit() {
@@ -26,15 +27,14 @@ export class Tab1Page implements OnInit {
   }
 
   async loadGames() {
-    console.log("Iniciando await");
     const loading = await this.loadingCtrl.create({
       message: 'Carregando..',
       spinner: 'bubbles',
     });
     await loading.present();
 
+    
     this.apiService.getGamesList().subscribe((res) => {
-      console.log("chegou no dismiss");
       loading.dismiss();
       this.jogos = this.filtro_jogos = res;
       console.log(this.jogos);
@@ -53,4 +53,10 @@ export class Tab1Page implements OnInit {
       this.jogos = this.filtro_jogos;
     }
   }
+
+
+  abrePaginaJogo(idJogo: string) {
+    this.controle_pagina.navigateForward("/detalhe-jogos/"+idJogo);
+  }
+
 }

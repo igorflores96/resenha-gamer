@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 
 export interface ResultadoApi {
-  id: number;
+  id: string;
   title: string;
   thumbnail: string;
   short_description: string;
@@ -27,11 +27,11 @@ export class ApiService {
 
 }
 
-  getGamesList(): Observable<ResultadoApi> {
-    return this.http.get<ResultadoApi>(`${environment.baseUrl}/api/games?rapidapi-key=${environment.apiKey}`);
+  getGamesList(): Observable<ResultadoApi[]> {
+    return this.http.get<ResultadoApi[]>(`${environment.baseUrl}/api/games?rapidapi-key=${environment.apiKey}`);
   }
 
-  getGameDetail(id: number) {
-    return this.http.get(`${environment.baseUrl}/api/game/id=${id.toString()}?rapidapi-key=${environment.apiKey}`);
+  getGameDetail(id: string) {
+    return this.http.get(`${environment.baseUrl}/api/game?id=${id}&rapidapi-key=${environment.apiKey}`);
   }
 }
