@@ -5,7 +5,17 @@
 export const environment = {
   production: false,
   apiKey: 'e5f5406524msh6823812e61565fdp143b77jsn884c82ed34e3',
-  baseUrl: 'http://free-to-play-games-database.p.rapidapi.com',  
+  baseUrl: 'http://free-to-play-games-database.p.rapidapi.com',
+  
+  firebase: { 
+    projectId: "resenha-gamer",
+    appId: "1:291182041739:android:00397573ed7b75e9d0928e",
+    storageBucket: "resenha-gamer.appspot.com",
+    apiKey: "AIzaSyAvKLHIxmCPRSAoDE7vIOrU4zUOFUmJ3Ik",
+    authDomain: "resenha-gamer.firebaseapp.com",
+    messagingSenderId: "291182041739",
+  }
+    
 };
 
 /*

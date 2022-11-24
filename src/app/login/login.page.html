@@ -4,6 +4,20 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+  <form [formGroup]="credenciais" (ngSubmit)="login()">
 
+    <ion-item fill="solid" class="ion-margin-bottom">
+      <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+      <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">O formato deve ser: exemplo@exemplo.exemplo</ion-note>
+    </ion-item>
+
+    <ion-item fill="solid" class="ion-margin-bottom">
+      <ion-input type="password" placeholder="Senha" formControlName="senha"></ion-input>
+      <ion-note slot="error" *ngIf="(senha.dirty || senha.touched) && senha.errors">A senha deve ter 6 digitos</ion-note>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" [disabled]="!credenciais.valid">Login</ion-button>
+    <ion-button expand="full" type="button" (click)="registrar()">Criar conta</ion-button>
+  </form>
 </ion-content>
