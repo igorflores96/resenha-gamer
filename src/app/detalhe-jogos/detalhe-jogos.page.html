@@ -1,9 +1,30 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>detalhe-jogos</ion-title>
+    <ion-title>{{jogo?.title}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card>
+    <img [src]="jogo?.thumbnail">
+    <ion-card-header>
+      <ion-card-title>{{jogo?.title}}</ion-card-title>
+      <ion-card-subtitle>{{jogo?.short_description}}</ion-card-subtitle>
+      <ion-item color="none" lines="none">
+        <ion-badge color="success" slot="start">{{jogo?.genre }}</ion-badge>
+        <ion-badge color="success">{{jogo?.platform }}</ion-badge>
+        <ion-badge color="success" slot="end">{{jogo?.publisher }}</ion-badge>
+      </ion-item>
+    </ion-card-header>
+  </ion-card>
 </ion-content>
+
+
+<ion-footer>
+  <ion-button expand="full" (click)="paginaJogo()" color="tertiary">
+    Página do Jogo
+  </ion-button>
+</ion-footer>

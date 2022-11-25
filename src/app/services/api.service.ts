@@ -31,7 +31,7 @@ export class ApiService {
     return this.http.get<ResultadoApi[]>(`${environment.baseUrl}/api/games?rapidapi-key=${environment.apiKey}`);
   }
 
-  getGameDetail(id: string) {
+  getGameDetail(id: string){
     return this.http.get(`${environment.baseUrl}/api/game?id=${id}&rapidapi-key=${environment.apiKey}`);
   }
 }
